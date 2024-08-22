@@ -6,8 +6,8 @@
 _offline="false"
 _git="false"
 pkgname=android-utils
-pkgver='0.0.0.0.0.0.0.0.0.0.0.0.0.1.1.1.1'
-_commit="cedee53ffc1386729cbb7d57171ed38c3800448b"
+pkgver='0.0.0.0.0.0.0.0.0.0.0.0.0.1.1.1.1.1'
+_commit="08a00bad2977cbc30c6f1d1ba513b0b9ab8233b3"
 pkgrel=1
 _pkgdesc=(
   "Various android utility commands."
@@ -64,7 +64,7 @@ _tarname="${pkgname}-${_tag}"
     _sum='b245547bdcdbfeb09f400305a4b515b6d49635be90f560a39302761fc2688571'
   elif [[ "${_tag_name}" == "commit" ]]; then
     _tar="${_tarname}.zip::${_url}/archive/${_commit}.zip"
-    _sum="97046ab6956594c193a2d0b98386d16525ed1b98e1b7608d29bbe26c01dae688"
+    _sum="416a90dcc579b8e2203ab999af9561e63c9488192680fcace6664ac499d80340"
   fi && \
     source+=(
       "${_tar}"
