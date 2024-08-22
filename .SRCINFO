@@ -1,6 +1,6 @@
 pkgbase = android-utils
 	pkgdesc = Various android utility commands.
-	pkgver = 0.0.0.0.0.0.0.0.0.0.0.0.0.1
+	pkgver = 0.0.0.0.0.0.0.0.0.0.0.0.0.1.1.1.1
 	pkgrel = 1
 	url = https://github.com/themartiancompany/android-utils
 	arch = any
@@ -8,7 +8,7 @@ pkgbase = android-utils
 	checkdepends = shellcheck
 	makedepends = make
 	depends = libcrash-bash
-	source = android-utils-5f03476d9988af548fa241edc87f8a7eb27cc880.zip::https://github.com/themartiancompany/android-utils/archive/5f03476d9988af548fa241edc87f8a7eb27cc880.zip
-	sha256sums = 884265e2cbc1a89b8ced8c47bd645bdc03dc830d883967c36b88d4e4e5b2fd4f
+	source = android-utils-cedee53ffc1386729cbb7d57171ed38c3800448b.zip::https://github.com/themartiancompany/android-utils/archive/cedee53ffc1386729cbb7d57171ed38c3800448b.zip
+	sha256sums = 97046ab6956594c193a2d0b98386d16525ed1b98e1b7608d29bbe26c01dae688
 
 pkgname = android-utils
