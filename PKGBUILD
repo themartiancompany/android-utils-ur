@@ -6,8 +6,8 @@
 _offline="false"
 _git="false"
 pkgname=android-utils
-pkgver='0.0.0.0.0.0.0.0.0.0.0.0.0.1'
-_commit="5f03476d9988af548fa241edc87f8a7eb27cc880"
+pkgver='0.0.0.0.0.0.0.0.0.0.0.0.0.1.1'
+_commit="a65e66483528f0f0e2891b418196310431ff6867"
 pkgrel=1
 _pkgdesc=(
   "Various android utility commands."
