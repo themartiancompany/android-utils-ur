@@ -122,19 +122,20 @@ elif [[ "${_git}" == true ]]; then
   )
 elif [[ "${_git}" == false ]]; then
   if [[ "${_tag_name}" == 'pkgver' ]]; then
-    _tar="${_tarname}.tar.gz::${_url}/archive/refs/tags/${_tag}.tar.gz"
+    _src="${_tarname}.tar.gz::${_url}/archive/refs/tags/${_tag}.tar.gz"
     _sum='b245547bdcdbfeb09f400305a4b515b6d49635be90f560a39302761fc2688571'
   elif [[ "${_tag_name}" == "commit" ]]; then
-    _tar="${_tarname}.zip::${_url}/archive/${_commit}.zip"
+    _src="${_tarname}.zip::${_url}/archive/${_commit}.zip"
     _sum="fa59d8028cd65d978674f117ec0315dadef9f2f47e6b62937c352322ec03662a"
   fi
-  source+=(
-    "${_tar}"
-  )
-  sha256sums+=(
-    "${_sum}"
-  )
 fi
+source+=(
+  "${_src}"
+)
+sha256sums+=(
+  "${_sum}"
+)
+
 
 check() {
   cd \
