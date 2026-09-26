@@ -48,7 +48,10 @@ _os="$( \
   uname \
     -o)"
 _offline="false"
-_git="false"
+if [[ ! -v "_git" ]]; then
+  _git="false"
+fi
+_py="python"
 _pkg=android-utils
 pkgbase="${_pkg}"
 pkgname=(
@@ -56,7 +59,7 @@ pkgname=(
 )
 pkgver='0.0.0.0.0.0.0.0.0.0.0.0.0.1.1.1.1.1.1.1'
 _commit="c0d0755ba29b23fca1392d3c91ec7e748df0e3e0"
-pkgrel=1
+pkgrel=2
 _pkgdesc=(
   "Various android utility commands."
 )
