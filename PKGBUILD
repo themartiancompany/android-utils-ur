@@ -1,11 +1,44 @@
 # SPDX-License-Identifier: AGPL-3.0
+
+#    -----------------------------------------------------
+#    Copyright © 2024, 2025, 2026  Pellegrino Prevete
 #
-# Maintainer: Truocolo <truocolo@aol.com>
-# Maintainer: Pellegrino Prevete (tallero) <pellegrinoprevete@gmail.com>
+#    All rights reserved
+#    -----------------------------------------------------
+#
+#    This program is free software: you can redistribute
+#    it and/or modify it under the terms of the
+#    GNU Affero General Public License as published by
+#    the Free Software Foundation, either version 3 of
+#    the License, or (at your option) any later version.
+#
+#    This program is distributed in the hope that it
+#    will be useful, but WITHOUT ANY WARRANTY;
+#    without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+#    See the GNU Affero General Public License for
+#    more details.
+#
+#    You should have received a copy of the
+#    GNU Affero General Public License
+#    along with this program.
+#    If not, see <https://www.gnu.org/licenses/>.
+
+# Maintainers:
+#   Truocolo
+#     <truocolo@aol.com>
+#     <truocolo@0x6E5163fC4BFc1511Dbe06bB605cc14a3e462332b>
+#   Pellegrino Prevete (dvorak)
+#     <pellegrinoprevete@gmail.com>
+#     <dvorak@0x87003Bd6C074C713783df04f36517451fF34CBEf>
 
 _offline="false"
 _git="false"
-pkgname=android-utils
+_pkg=android-utils
+pkgbase="${_pkg}"
+pkgname=(
+  "${_pkg}"
+)
 pkgver='0.0.0.0.0.0.0.0.0.0.0.0.0.1.1.1.1.1.1.1'
 _commit="c0d0755ba29b23fca1392d3c91ec7e748df0e3e0"
 pkgrel=1
@@ -14,18 +47,18 @@ _pkgdesc=(
 )
 pkgdesc="${_pkgdesc[*]}"
 arch=(
-  any
+  "any"
 )
 _http="https://github.com"
 _ns="themartiancompany"
 url="${_http}/${_ns}/${pkgname}"
 license=(
-  AGPL3
+  "AGPL3"
 )
 depends=(
   "libcrash-bash"
 )
-_os="$( \
+_os="$(
   uname \
     -o)"
 optdepends=(
@@ -35,7 +68,7 @@ optdepends=(
   optdepends+=(
   )
 makedepends=(
-  make
+  "make"
 )
 checkdepends=(
   "shellcheck"
@@ -48,30 +81,31 @@ _tag_name="commit"
 _tarname="${pkgname}-${_tag}"
 [[ "${_offline}" == "true" ]] && \
   url="file://${HOME}/${pkgname}"
-[[ "${_git}" == true ]] && \
+if [[ "${_git}" == true ]]; then
   makedepends+=(
     "git"
-  ) && \
+  )
   source+=(
     "${_tarname}::git+${_url}#${_tag_name}=${_tag}"
-  ) && \
+  )
   sha256sums+=(
     SKIP
   )
-[[ "${_git}" == false ]] && \
+elif [[ "${_git}" == false ]]; then
   if [[ "${_tag_name}" == 'pkgver' ]]; then
     _tar="${_tarname}.tar.gz::${_url}/archive/refs/tags/${_tag}.tar.gz"
     _sum='b245547bdcdbfeb09f400305a4b515b6d49635be90f560a39302761fc2688571'
   elif [[ "${_tag_name}" == "commit" ]]; then
     _tar="${_tarname}.zip::${_url}/archive/${_commit}.zip"
     _sum="fa59d8028cd65d978674f117ec0315dadef9f2f47e6b62937c352322ec03662a"
-  fi && \
-    source+=(
-      "${_tar}"
-    ) && \
-    sha256sums+=(
-      "${_sum}"
-    )
+  fi
+  source+=(
+    "${_tar}"
+  )
+  sha256sums+=(
+    "${_sum}"
+  )
+fi
 
 check() {
   cd \
